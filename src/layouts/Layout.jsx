@@ -3,7 +3,7 @@ import Logo from "../components/Logo";
 
 const Layout = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-x-hidden">
       <aside className="bg-gray-800 w-16 md:w-64 p-5 flex flex-col justify-between fixed h-full">
         <div className="flex items-center justify-center mb-4">
           <div className="w-8 h-8 md:w-16 md:h-16 lg:w-24 lg:h-24">
@@ -48,8 +48,8 @@ const Layout = () => {
         </footer>
       </aside>
 
-      <div className="flex-1 flex flex-col ml-16 md:ml-64">
-        <main className="flex-1 overflow-y-auto overflow-x-hidden bg-slate-300 w-full">
+      <div className="flex-1 flex flex-col pl-16 md:pl-64 overflow-hidden">
+        <main className="flex-1 overflow-y-auto bg-slate-300 w-full">
           <Outlet />
         </main>
       </div>
