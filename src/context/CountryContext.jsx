@@ -24,7 +24,7 @@ const GET_COUNTRIES = gql`
 `;
 
 const GIST_URL =
-  "https://gist.githubusercontent.com/Juliotornero/3488b604d2ebc812cce9ef46b5f3149a/raw/05b1122e29d7ac42f699a85b0a6a3c712f597e88/paises.json";
+  "https://gist.githubusercontent.com/Juliotornero/3488b604d2ebc812cce9ef46b5f3149a/raw/b99fb9ca2b8ce1062f835a5e84e155b71cf46780/paises.json";
 
 export const CountryContext = createContext();
 
