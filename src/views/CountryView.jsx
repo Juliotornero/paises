@@ -5,10 +5,13 @@ import CountryDetailModal from "../components/CountryDetailModal";
 import SearchBar from "../components/SearchBar";
 
 const CountryView = () => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const [selectedCountry, setSelectedCountry] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+
+
   const { filteredCountries, loading, searchTerm } = useContext(CountryContext);
+  
 
   const openModal = (country) => {
     setSelectedCountry(country);
@@ -24,9 +27,8 @@ const CountryView = () => {
 
   return (
     <div className="w-full h-full p-5 flex flex-col justify-start items-center overflow-x-hidden">
-      {/* Condiciona la renderización de SearchBar */}
       {!isModalOpen && (
-        <SearchBar isFocused={isFocused} setIsFocused={setIsFocused} />
+        <SearchBar />
       )}
       <div className="w-full flex flex-wrap justify-center gap-4 mt-6">
         {loading ? (
@@ -43,12 +45,7 @@ const CountryView = () => {
               key={country.name}
               name={country.name}
               continent={country.continent.name}
-              population={country.population}
-              capital={country.capital}
-              currency={country.currency}
               imageUrl={country.imageUrl}
-              subdivisions={country.subdivisions.map((sub) => sub.name).join(", ")}
-              languages={country.languages.map((lang) => lang.name).join(", ")}
               flagUrl={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
               onClick={() => openModal(country)}
             />

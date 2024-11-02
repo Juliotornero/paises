@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
 
 const CountryDetailModal = ({ country, onClose }) => {
-  const [selectedSubdivision, setSelectedSubdivision] = useState("");
-
-  useEffect(() => {
-    if (country.subdivisions.length > 0) {
-      setSelectedSubdivision(country.subdivisions[0].name);
-    } else {
-      setSelectedSubdivision("");
-    }
-  }, [country]);
-
+  
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 text-gray-600 text-sm">
       <div className="bg-white rounded-lg py-12 px-6 max-w-[290px] flex flex-col relative">
@@ -69,12 +60,7 @@ const CountryDetailModal = ({ country, onClose }) => {
                 country.subdivisions.map((sub, index) => (
                   <div
                     key={index}
-                    onClick={() => {
-                      setSelectedSubdivision(sub.name);
-                    }}
-                    className={`p-2 hover:bg-gray-100 cursor-pointer ${
-                      selectedSubdivision === sub.name ? "bg-gray-200" : ""
-                    }`}
+                    className="p-2 hover:bg-gray-100 cursor-pointer"
                   >
                     {sub.name}
                   </div>

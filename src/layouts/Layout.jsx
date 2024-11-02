@@ -48,11 +48,11 @@ const Layout = () => {
         </footer>
       </aside>
 
-      <div className="flex-1 flex flex-col pl-16 md:pl-64 overflow-hidden">
-        <main className="flex-1 overflow-y-auto bg-slate-300 w-full">
+      
+        <main className="flex-1 pl-16 md:pl-64 overflow-y-auto bg-slate-300 w-full">
           <Outlet />
         </main>
-      </div>
+     
     </div>
   );
 };

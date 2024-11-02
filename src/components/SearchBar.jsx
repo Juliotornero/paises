@@ -1,7 +1,8 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import { CountryContext } from "../context/CountryContext";
 
-const SearchBar = ({ isFocused, setIsFocused }) => {
+const SearchBar = () => {
+  const [isFocused, setIsFocused] = useState(false); 
   const modalRef = useRef(null);
   const {
     searchTerm,
@@ -23,7 +24,7 @@ const SearchBar = ({ isFocused, setIsFocused }) => {
       return updatedContinents;
     });
   };
-
+ 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
